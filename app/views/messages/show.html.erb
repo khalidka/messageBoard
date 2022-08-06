@@ -1,0 +1,13 @@
+<h2><%= @message.title %></h2>
+<p><%= @message.description %></p>
+
+<h3>Comments:</h3>
+<%= render @message.comments %>
+
+<h3>Reply to Message: </h3>
+<%= render 'comments/form' %>
+<br>
+<hr>
+<%= link_to "Back", root_path, class: 'btn btn-dark' %>
+<%= link_to "Edit",  edit_message_path(@message), class: "btn btn-secondary" %>
+<%= link_to "Delete", message_path(@message), method: :delete, data: { confirm: "Are you sure?"}, class: "btn btn-danger" %>
